@@ -15,7 +15,6 @@ Where 10 is replaced by the calculation of the total price.
 // Good practice Approach
 
 // Bad practive Approach
-console.log('Hello');
 /*
 3)
 Create a variable that stores a boolean.
