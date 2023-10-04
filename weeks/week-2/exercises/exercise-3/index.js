@@ -49,7 +49,8 @@ const pichachu = {
 // 'Pikachu is a electricity pokemon with the strength of 32'
 // Selecting some of the information about your pikachu object.
 
-console.log(`${pichachu.name} is a ${pichachu.element} pokemon with the strength of ${pichachu.strength}`);
+//Enable here
+// console.log(`${pichachu.name} is a ${pichachu.element} pokemon with the strength of ${pichachu.strength}`);
 
 // 4)
 // Add the property stillToCatch: true to the Pikachu object.
