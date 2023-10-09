@@ -62,6 +62,7 @@ const pichachu = {
 
 // 6)
 // Delete a property from the Pikachu object.
+delete pikachu.strength;
 
 // 7)
 // Fill up this array with a few more pokemons.
