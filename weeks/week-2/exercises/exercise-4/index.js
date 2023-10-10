@@ -13,14 +13,17 @@ const pokemons = [
   "Metapod",
   "Weedle",
   "Pikachu",
-  "Pidgey"
+  "Pidgey",
 ];
 
+console.log("Iteration 01");
 const countThem = () => {
   // print out, in a sentence, how many pokemons I have.
   // like: "I have x pokemons!"
   console.log(`I have ${pokemons.length} pokemons!`);
 };
+countThem();
+console.log("----");
 
 //Enable here
 // countThem();
@@ -28,6 +31,8 @@ const countThem = () => {
 const orderThem = () => {
   console.log(pokemons.sort());
 };
+orderThem();
+console.log("----");
 
 // Enable here
 // orderThem();
@@ -35,6 +40,8 @@ const orderThem = () => {
 const flipThem = () => {
   console.log(pokemons.sort().reverse());
 };
+flipThem();
+console.log("----");
 
 //Enable here
 // flipThem();
@@ -46,6 +53,8 @@ const makeThemBig = (array) => {
     console.log(pokemon.toUpperCase());
   });
 };
+makeThemBig();
+console.log("----");
 
 //Enable here
 // makeThemBig(pokemons);
@@ -56,6 +65,7 @@ const onlyTheBs = (array) => {
   //print the results to console
   console.log(onlyB);
 };
+onlyTheBs();
 
 //Enable here
 // onlyTheBs(pokemons);
@@ -65,6 +75,8 @@ const notTheCs = (array) => {
   //Use filter method to weed out pokemons starting with "C"
   return array.filter((letter) => letter.charAt(0) !== 'C');
 };
+notTheCs();
+console.log("----");
 
 // Enable here
 // console.log(notTheCs(pokemons));
@@ -77,6 +89,8 @@ const nameAndIdThanks = (array) => {
     console.log(`Nr. ${index + 1} - ${pokemon}`);
   });
 };
+nameAndIdThanks();
+console.log("----");
 
 // Enable here
 // nameAndIdThanks(pokemons);
@@ -88,6 +102,9 @@ const catchPokemon = name => {
   pokemons.push("Babaganosh");
   console.log(pokemons);
 };
+catchPokemon("Raichu");
+console.log(pokemons);
+console.log("----");
 
 //Enable here
 // catchPokemon(); 
@@ -99,6 +116,8 @@ const didICatchIt = name => {
   console.log(`Sorry, you haven't caught ${name.toUpperCase()}`):
   console.log(`Yes! You caught ${name.toUpperCase()}!`);
 };
+didICatchIt("Mewtwo");
+console.log("----");
 
 // Enable here
 // didICatchIt("pikachu");
@@ -110,6 +129,9 @@ const addInThirdPlace = (array) => {
   array.splice(2, 0, "Clefairy");
   console.log(pokemons);
 };
+addInThirdPlace();
+console.log(pokemons);
+console.log("----");
 
 // Enable here
 // addInThirdPlace(pokemons);
