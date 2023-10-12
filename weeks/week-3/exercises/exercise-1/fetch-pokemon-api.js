@@ -49,6 +49,8 @@ const types = document.getElementById("types");
 //   }
 // };
 
+//fetchPokemonsTryCatch();
+
 // 2) a) As you can see, we get some metadata as well as
 //    the results of the fetch. Change the console.log so
 //    that you only log the array of pokemon objects.
@@ -130,6 +132,40 @@ const types = document.getElementById("types");
 
 //   fetchBulbasaurData();
 
+//     const responseFromApi = await fetch(pokemonById);
+//     const individualPokemon = await responseFromApi.json();
+
+//     const pokeApi = individualPokemon;
+//     console.log(pokeApi);
+
+//     // Save data in respective variables
+//     const nameValue = pokeApi.name;
+//     const heightValue = pokeApi.height;
+//     const weightValue = `${pokeApi.weight} KG's`;
+//     const typesValue = pokeApi.types.map((type) => type.type.name);
+//     const strengthValue = pokeApi.id;
+//     const pokemonImage = pokeApi.sprites.front_default;
+
+//     // Example usage: Display the values in the console
+//     console.log(nameValue);
+//     console.log(heightValue);
+//     console.log(weightValue);
+//     console.log(typesValue);
+
+//     // Example usage: Display the values in HTML elements
+//     name.textContent = nameValue;
+//     height.textContent = heightValue;
+//     weight.textContent = weightValue;
+//     types.textContent = typesValue.join(", ");
+//     element.textContent = strengthValue;
+//     image.src = pokemonImage;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// fetchCharizardData();
+
 // 5) After familiarizing with the data, we will use the data
 //    to change our table. We will give you the image as a start.
 //    If you named the data something else than json, you change the
@@ -176,8 +212,52 @@ const fetchBulbasaurData = async () => {
       }
   }
 
-  fetchBulbasaurData();
+  // fetchBulbasaurData();
 // ***BONUS***
 // Check out the API's documentation and try to fetch from another
 // endpoint! There are many - as you can see in the first link
 
+const fetchPokemonDataReusable = async (pokemonId) => {
+  try {
+    let pokemonById = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
+
+    const responseFromApi = await fetch(pokemonById);
+    const individualPokemon = await responseFromApi.json();
+
+    const pokeApi = individualPokemon;
+    console.log(pokeApi);
+
+    // Save data in respective variables
+    const nameValue = pokeApi.name;
+    const heightValue = pokeApi.height;
+    const weightValue = `${pokeApi.weight} KG's`;
+    const typesValue = pokeApi.types.map((type) => type.type.name);
+    const strengthValue = pokeApi.id;
+    const pokemonImage = pokeApi.sprites.front_default;
+
+    // Example usage: Display the values in the console
+    console.log(nameValue);
+    console.log(heightValue);
+    console.log(weightValue);
+    console.log(typesValue);
+
+    // Example usage: Display the values in HTML elements
+    name.textContent = nameValue;
+    height.textContent = heightValue;
+    weight.textContent = weightValue;
+    types.textContent = typesValue.join(", ");
+    element.textContent = strengthValue;
+    image.src = pokemonImage;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// const userInput = prompt("Enter the Pokemon ID:");
+// fetchPokemonDataReusable(userInput);
+
+// Function to be attached as event listener
+const handleButtonClick = () => {
+  const userInput = prompt("Enter the Pokemon ID:");
+  fetchPokemonDataReusable(userInput);
+};
