@@ -6,15 +6,41 @@
 Define the word and API_KEY as path and query parameters for the API.
 Make sure to replace the values with your actual word and API key. */
 
+// request url
+// https://www.dictionaryapi.com/api/v3/references/thesaurus/json/umpire?key=your-api-key
+
+
+const apiKey = '5cb75169-2073-40b9-8fea-bd987d1b0271';
+const apiUrl = 'https://www.dictionaryapi.com/api/v3/references/thesaurus/json/'
+const word = "umpire";
+
+
 /* 2. Construct the API URL:
 Construct the URL using the word and API_KEY parameters:
  "
 */
 
+
+const url = `${apiUrl}${word}?key=${apiKey}`;
+console.log(url)
+
+// https://www.dictionaryapi.com/api/v3/references/thesaurus/json/umpire?key=5cb75169-2073-40b9-8fea-bd987d1b0271
+
 /* 3. Define the fetchWord Function:
 Define a function called fetchWord that makes a GET request to the API, parses the JSON response, 
 and updates the HTML with the word data. This function should be asynchronous to handle the API request:
  */
+
+const fetchWord = async() => {
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data);
+}
+fetchWord();
+
+
 
 /* 4. Define the displayResults Function:
 Define a function called displayResults that takes the API response data and updates the HTML elements with the word, 
