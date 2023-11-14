@@ -6,8 +6,8 @@ const Cart = () => {
   const dispatch = useDispatch();
   // populate your cartItems object from the global state
   const showItems = useSelector((store) => store.cart.cartItems);
-  const handleRemove = (id) => {
-    dispatch(removeItem(id));
+  const handleRemove = (item) => {
+    dispatch(removeItem(item));
   };
 
   return (
@@ -19,7 +19,7 @@ const Cart = () => {
             <div key={item.id}>
               <p> {item.name} </p>
               <p>price: {item.price}</p>
-              <button onClick={() => handleRemove(item.id)}>Rmove item</button>
+              <button onClick={() => handleRemove(item)}>Rmove item</button>
             </div>
           </>
         ))}
