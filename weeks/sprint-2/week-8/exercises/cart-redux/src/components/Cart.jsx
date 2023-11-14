@@ -9,10 +9,7 @@ const Cart = () => {
   const handleRemove = (id) => {
     dispatch(removeItem(id));
   };
-  // const handleAddToCart = (index) => {
-  //   dispatch(addItem(selectProduct[index]));
-  //   console.log(selectProduct[index]);
-  // };
+
   return (
     <div>
       <h2>Shopping Cart</h2>
